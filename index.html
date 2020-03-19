@@ -121,16 +121,34 @@
       }
     );
 
-    console.log(sortedPeople);
-
-
-
-
+    // console.log(sortedPeople);
 
 
     // 8. Reduce Exercise
     // Sum up the instances of each of these
     const data = ['car', 'car', 'truck', 'truck', 'bike', 'walk', 'car', 'van', 'bike', 'walk', 'car', 'van', 'car', 'truck' ];
+
+   let vehicleCounter = data.reduce((obj, vehicle) => {
+
+    //start with the condition to see if it exists
+    if(!obj[vehicle]){
+      //zeroed
+      obj[vehicle] =0;
+    }
+    //increase the counter
+    obj[vehicle]++
+
+    //return the obj at the end
+    return obj;
+
+  // have to pass the accumulator at the end
+   }, {})
+
+   console.log(vehicleCounter);
+
+
+
+
 
   </script>
 </body>
