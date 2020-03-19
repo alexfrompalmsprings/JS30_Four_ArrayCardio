@@ -67,16 +67,11 @@
 
     // Array.prototype.reduce()
     // 4. How many years did all the inventors live all together?
-      let ages = inventors.map(
-        inventor => (inventor.passed - inventor.year)
-      );
 
-      //we now have an array with all the ages;
-      console.log(ages);
-
-      let reducer = (total, current) => total + current;
-
-      let addAges = ages.reduce(reducer);
+    //much neaty solution
+      let addAges = inventors.reduce((total, inventor) => {
+          return total + (inventor.passed - inventor.year)
+        },0);
 
       console.log(addAges)
 
